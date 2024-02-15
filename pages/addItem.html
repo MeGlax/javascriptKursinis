@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+
+<div class="container">
+    <p id="redirectingText">Reddirecting in <span id="secondCount">3</span></p>
+    <div id="form">
+        <input id='itemTitle' class="addItemInputs" type="text" placeholder="pavadinimas">
+        <input id='itemImageLink' class="addItemInputs" type="text" placeholder="foto nuoroda">
+        <textarea id='itemDescription' class="addItemInputs" type="text" placeholder="Produkto aprasymas"></textarea>
+        <input id='itemPhoneNumber' class="addItemInputs" type="text" placeholder="Jusu telefono numeris">
+        <input id='itemPrice' class="addItemInputs" type="text" placeholder="Kaina">
+        <select name="" id="itemCity">
+            <option value="Kaunas">Kaunas</option>
+            <option value="Vilnius">Vilnius</option>
+            <option value="Panevezys">Panevezys</option>
+            <option value="Siauliai">Siauliai</option>
+            <option value="Klaipeda">Klaipeda</option>
+        </select>
+        <button id="submit">Ikelti</button>
+        <p id="submitErrorMessage"></p>
+    </div>
+</div>
+
+<script type="module" src="../src/navBar.js"></script>
+<script type="module" src="../src/addItem.js"></script>
+</body>
+</html>

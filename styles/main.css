@@ -1,0 +1,396 @@
+:root {
+    --primary-color: #447096;
+    --secondary-color: #84a9c3;
+    --neutral-color: #b5c9d8;
+}
+
+@font-face {
+    font-family: 'retroFont';
+    src: url('../fonts/retroFont.woff2') format('woff2');
+}
+body {
+    margin: 0;
+    font-family: 'retroFont';
+    background-image: url('../images/kaipDabar.png');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+}
+main {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Sorting ??????????? */
+.sortSelectWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+#pageCountWrapper {
+    display: flex;
+    gap: 5px;
+}
+.pageNumbers {
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+.pageNumberClicked {
+    color: var(--primary-color);
+    cursor: default;
+}
+.pageNumbers:hover {
+    color: var(--primary-color)
+}
+#sortSelect {
+    border-radius: 0px;
+    border: none;
+    border-top: 2px solid #7b7b7b;
+    border-left: 2px solid #7b7b7b;
+    background-color: #c0c0c0;
+    font-family: 'retroFont';
+    padding: 5px;
+}
+/* Sorting ??????????? */
+
+
+/* Cards ///////////////////*/
+#cardHolder {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 30px;
+    grid-column-gap: 20px;;
+    background-color: rgba(256, 256, 256, 0.5);
+}
+.card {
+    all: unset;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px 0px lightgrey;
+    box-sizing: border-box;
+    padding: 20px;
+    height: 400px;
+    transition: 0.1s;
+    background-color: rgba(256, 256, 256, 1);
+    color: black
+}
+.card:hover {
+    box-shadow: 0px 0px 5px 3px lightgrey;
+}
+.card:hover .cardImage {
+    border: 1px solid red;
+    scale: 1.1;
+}
+.cardImageWrapper {
+    width: 100%;
+    height: 240px;
+    box-shadow: 0px 0px 5px -2px lightgrey;
+    overflow: hidden;
+    position: relative;
+}
+.favorite {
+    all: unset;
+    height: 30px;
+    width: 30px;
+    background-image: url("../images/heart.png");
+    background-size: contain;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+.favorite:hover {
+    background-image: url("../images/heartFocused.png");
+}
+.cardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: 0.2s;
+}
+.cardTitle {
+    /* margin-bottom: auto; */
+}
+.cardInfo {
+    display: flex; 
+    justify-content: space-between;
+}
+/* Cards/////////////////////// */
+
+
+/* Header ???????? */
+.navBar {
+    background: white;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+.navBarContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.navBarContentLeft {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+.addAdText {
+    display: inline-block;
+    font-size: 30px;
+    color: var(--primary-color);
+    margin: 0px;
+    cursor:default;
+    user-select: none;
+}
+.addAdPlusImg {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    background-image: url(../images/plusBlack.svg);
+    background-position: center;
+    background-size:cover;
+    margin-top: 4px;
+}
+.addAdPlusImg:hover {
+    background-image: url(../images/plusBlue.svg);
+}
+.navBarContentMiddle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+.logoWrapper {
+    all: unset;
+    cursor: pointer;
+}
+.logo {
+    height: 40px;
+}
+.searchWrapper {
+    display: flex;
+    justify-content: center;
+
+}
+.searchButton {
+    background-image: url("../images/search.svg");
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--primary-color);
+    box-sizing: border-box;
+    width: 50px;
+    height: 26px;
+    border: none;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    box-sizing: content-box;
+    cursor: pointer;
+}
+.searchButton:hover {
+    background-color: var(--secondary-color);
+}
+.searchInput {
+    width: 350px;
+    height: 26px;
+    border: none;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    box-sizing: content-box;
+    padding-left: 5px;
+}
+.searchInput:focus {
+    outline: none;
+}
+.navBarContentRight {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 5px;
+}
+.loginImg {
+    width: 20px;
+}
+.navUsername {
+    cursor:default;
+    user-select: none;
+}
+.navButtons {
+    all: unset;
+    font-size: 15px;
+    cursor: pointer;
+    user-select: none;
+}
+.navButtons:hover {
+    color: var(--primary-color)
+}
+.loginRegisterPrompt {
+    display: none;
+    position: fixed;
+    z-index: 50;
+    border: 1px solid black;
+    border-radius: 5px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    padding-top: 50px;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.loginRegisterPromptHideShow {
+    display: flex;
+}
+.closeLoginRegister {
+    all: unset;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/x.svg);
+    background-position: center;
+    background-size:cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+}
+.closeLoginRegister:hover {
+    background-color: var(--secondary-color)
+}
+.loginRegisterErrorMessage {
+    font-size: 10px;
+    margin: 0;
+    color: rgba(255, 0, 0, 0.658);
+    width: 160px;
+    text-align: center;
+    height: 50px;
+}
+/* Header ???????? */
+
+
+/* addItem >>>>>>> */
+#form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    transition: 6s;
+    position: relative;
+}
+#submitErrorMessage {
+    font-size: 16px;
+    color: red;
+    text-decoration: underline;
+}
+.formDropping {
+    transform: translatey(2400px)
+}
+#redirectingText {
+    position: absolute;
+    top: 50%;
+    font-size: 60px;
+    display: none;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--primary-color)
+}
+#secondCount {
+    text-decoration: underline;
+    color: black;
+}
+.showReddirectingText {
+    display: inline-block!important;
+}
+/* addItem >>>>>>> */
+
+
+/* itemPage >>>>>>> */
+#itemImage {
+    width: 100%;
+}
+.itemWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+.buttonsWrapper {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+#backButton {
+    border: 2px solid var(--primary-color);
+    background-color: var(--neutral-color);
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 1px;
+}
+#backButton:hover {
+    background-color: var(--secondary-color);
+}
+#deleteButton {
+    border: 2px solid red;
+    background-color: rgb(216, 159, 159);
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 1px;
+}
+#deleteButton:hover {
+    background-color: rgb(189, 126, 126)
+}
+#notThatGuy {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background-color: var(--neutral-color);
+    transform: translate(-50%, -50%);
+    max-width: 80vw; 
+    max-height: 45vw;
+    overflow: auto;
+    padding: 20px;
+    text-align: center;
+}
+.notThatGuyHide {
+    display: none
+}
+#closeNotThatGuy {
+    all: unset;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background-image: url(../images/x.svg);
+    background-position: center;
+    background-size:cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+}
+#closeNotThatGuy:hover {
+    background-color: var(--secondary-color);
+}
+.deletedSuccessfuly {
+    text-align: center;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--neutral-color);
+    padding: 20px;
+    font-size: 20px;
+    cursor: default;
+}
+/* itemPage >>>>>>> */
