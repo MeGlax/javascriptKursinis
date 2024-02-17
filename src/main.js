@@ -89,7 +89,7 @@ async function fetchGenerateDisplayCards () {
             else{favoriteIcon.classList.add('favoriteInactive')}
         
             cardImage.src=arr.image
-            // card.href="../pages/itemPage.html"
+            card.href="../pages/itemPage.html"
             cardTitle.textContent=arr.title
             cardPrice.textContent=`${arr.price} eu`
             cardCity.textContent=arr.city
@@ -108,7 +108,8 @@ async function fetchGenerateDisplayCards () {
                 localStorage.setItem("itemId", arr.id)
             }
 
-            favoriteIcon.addEventListener('click', ()=>{
+            favoriteIcon.addEventListener('click', (event)=>{
+                event.preventDefault()
                 if (arr.favorite) {
                     console.log(`title is ${arr.title}, id is ${arr.id}`)
                     let favoriteIdArray = localStorage.getItem("favorites").split(",")
