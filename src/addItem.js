@@ -39,11 +39,11 @@ async function addItem () {
         return;
     }
     console.log(addItemPhoneNumber)
-    if (/\D/.test(addItemPhoneNumber)) {
+    if (/\D/.test(addItemPhoneNumber) || addItemPhoneNumber.length<4) {
         submitErrorMessage.textContent='Turi buti numeris sudarytas tik is skaiciu'
         return;
     }
-    if (/\D/.test(addItemPrice)) {
+    if (/\D/.test(addItemPrice) || addItemPrice.length<1) {
         submitErrorMessage.textContent='Turi buti kaina sudaryta tik is skaiciu'
         return;
     }
