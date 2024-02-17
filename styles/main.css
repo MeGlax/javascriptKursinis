@@ -91,7 +91,7 @@ main {
     overflow: hidden;
     position: relative;
 }
-.favorite {
+.favoriteInactive {
     all: unset;
     height: 30px;
     width: 30px;
@@ -102,7 +102,21 @@ main {
     bottom: 0;
     z-index: 1;
 }
-.favorite:hover {
+.favoriteActive {
+    all: unset;
+    height: 30px;
+    width: 30px;
+    background-image: url("../images/heartActive.png");
+    background-size: contain;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+.favoriteInactive:hover {
+    background-image: url("../images/heartFocused.png");
+}
+.favoriteActive:hover {
     background-image: url("../images/heartFocused.png");
 }
 .cardImage {
