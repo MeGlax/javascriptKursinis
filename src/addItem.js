@@ -23,7 +23,8 @@ async function addItem () {
         "phoneNumber": parseInt(addItemPhoneNumber),
         "price": parseInt(addItemPrice),
         "userInfo": addItemUsername,
-        "city": addItemCity
+        "city": addItemCity,
+        "favorite": false,
     }
     submitErrorMessage.textContent=''
     if (addItemTitle.length<4) {
