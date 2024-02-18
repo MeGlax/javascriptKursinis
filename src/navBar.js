@@ -35,7 +35,11 @@ function createNavBar () {
         logoutButton.classList.add('navButtons')
         navUsername.classList.add('navUsername')
         
-        
+        searchButton.addEventListener('click', ()=>{
+            if (!window.location.pathname.includes("pages/index.html"))  {
+                window.location.href="index.html"
+            }
+        })
 
     addAdText.textContent='prideti'
     addAdPlusImg.href='../pages/addItem.html'

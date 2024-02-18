@@ -9,16 +9,14 @@ async function fetchGenerateDisplayCards () {
     let searchInput=document.getElementById('searchInput')
     let searchButton=document.getElementById('searchButton')
 
+    // navigation search
     if (searchInput.value) {
         data=data.filter(element=>element.title.toLowerCase().includes(searchInput.value.toLowerCase()))
-        console.log('hello')
     }
+    // navigation search
 
     sortSelect.addEventListener('change', createPagesAndSort)  // pakeitus skelbimų sortinim'ą refreshin'a puslapį
-
-    searchButton.addEventListener('click', ()=>{
-        fetchGenerateDisplayCards()
-    })
+    searchButton.addEventListener('click', ()=>{fetchGenerateDisplayCards()})  // paspaudus searchInput'ą, per naujo išsigeneruoja kortos su nauja inputValue reikšme.
 
 
     function createPagesAndSort () {
@@ -28,9 +26,6 @@ async function fetchGenerateDisplayCards () {
         else if (sortSelect.value==="byFavorites") {allCards=[...data].sort((a,b)=> (a.favorite===b.favorite) ? 0 : (a.favorite===false) ? 1 : -1 )}
         else {allCards=data}
         //sortinimas
-
-        //search
-        //search
 
         // favorites
         let favoritesArray=(localStorage.getItem('favorites')) ? localStorage.getItem('favorites').split(",") : []  // Iš local file'ų pasiema favorites ir sudeda į array
