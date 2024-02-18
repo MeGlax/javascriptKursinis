@@ -1,6 +1,3 @@
-let sortSelect = document.getElementById('sortSelect')
-
-
 async function fetchGenerateDisplayCards () {
     let response = await fetch("https://65c7734ae7c384aada6e8c82.mockapi.io/ads")
     let data = await response.json()
@@ -8,10 +5,20 @@ async function fetchGenerateDisplayCards () {
     let whichPage=1
     let cardsPerPage=10
     let cardArrayPortion=[]
+    let sortSelect = document.getElementById('sortSelect')
+    let searchInput=document.getElementById('searchInput')
+    let searchButton=document.getElementById('searchButton')
 
-
+    if (searchInput.value) {
+        data=data.filter(element=>element.title.toLowerCase().includes(searchInput.value.toLowerCase()))
+        console.log('hello')
+    }
 
     sortSelect.addEventListener('change', createPagesAndSort)  // pakeitus skelbimų sortinim'ą refreshin'a puslapį
+
+    searchButton.addEventListener('click', ()=>{
+        fetchGenerateDisplayCards()
+    })
 
 
     function createPagesAndSort () {
@@ -22,6 +29,8 @@ async function fetchGenerateDisplayCards () {
         else {allCards=data}
         //sortinimas
 
+        //search
+        //search
 
         // favorites
         let favoritesArray=(localStorage.getItem('favorites')) ? localStorage.getItem('favorites').split(",") : []  // Iš local file'ų pasiema favorites ir sudeda į array

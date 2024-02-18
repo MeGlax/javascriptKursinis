@@ -26,8 +26,8 @@ function createNavBar () {
         logoWrapper.classList.add('logoWrapper')
             logo.classList.add('logo')
         searchWrapper.classList.add('searchWrapper')
-            searchInput.classList.add('searchInput')
-            searchButton.classList.add('searchButton')
+            searchInput.id='searchInput'
+            searchButton.id='searchButton'
     navBarContentRight.classList.add('navBarContentRight')
         isLoggedInImg.classList.add('loginImg')
         isNotLoggedInImg.classList.add('loginImg')

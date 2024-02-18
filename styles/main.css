@@ -188,7 +188,7 @@ main {
     justify-content: center;
 
 }
-.searchButton {
+#searchButton {
     background-image: url("../images/search.svg");
     background-size:contain;
     background-repeat: no-repeat;
@@ -204,10 +204,10 @@ main {
     box-sizing: content-box;
     cursor: pointer;
 }
-.searchButton:hover {
+#searchButton:hover {
     background-color: var(--secondary-color);
 }
-.searchInput {
+#searchInput {
     width: 350px;
     height: 26px;
     border: none;
@@ -217,7 +217,7 @@ main {
     box-sizing: content-box;
     padding-left: 5px;
 }
-.searchInput:focus {
+#searchInput:focus {
     outline: none;
 }
 .navBarContentRight {
