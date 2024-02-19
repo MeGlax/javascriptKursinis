@@ -128,7 +128,7 @@ main {
 .cardTitle {
     /* margin-bottom: auto; */
     position: absolute;
-    width: 15%;;
+    width: 13%;
 }
 .cardInfo {
     display: flex; 
